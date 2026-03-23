@@ -1,295 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Aung Ko Myat (Lucas) — Customer & Technical Support Specialist</title>
-  <meta name="description" content="Portfolio of Aung Ko Myat (Lucas) — Customer Support and Technical Support Specialist with 5+ years of experience." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Portfolio of Aung Ko Myat (Lucas) — 5+ years in Customer & Technical Support."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg: #07070f;
-      --surface: #0f0f1a;
-      --accent: #00e5a0;
-      --accent2: #7c6dfa;
-      --text: #f0ede8;
-      --muted: #8a8898;
-      --border: rgba(255,255,255,0.07);
-      --panel-w: 88px;
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#07070f;--surface:#0f0f1a;--accent:#00e5a0;--accent2:#7c6dfa;
+      --text:#f0ede8;--muted:#8a8898;--border:rgba(255,255,255,0.07);--pw:88px;
     }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; overflow-x: hidden; min-height: 100vh; }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overflow-x:hidden;min-height:100vh}
 
-    /* SIDE PANELS */
-    .side-panel {
-      position: fixed; top: 0; bottom: 0;
-      width: var(--panel-w); z-index: 50;
-      display: flex; flex-direction: column; align-items: center;
-      overflow: hidden; pointer-events: none;
+    /* ── SIDE PANELS ── */
+    .sp{position:fixed;top:0;bottom:0;width:var(--pw);z-index:50;display:flex;flex-direction:column;align-items:center;overflow:hidden;pointer-events:none}
+    .sp.L{left:0;border-right:1px solid var(--border);background:linear-gradient(180deg,rgba(0,229,160,.025) 0%,transparent 50%,rgba(124,109,250,.025) 100%)}
+    .sp.R{right:0;border-left:1px solid var(--border);background:linear-gradient(180deg,rgba(124,109,250,.025) 0%,transparent 50%,rgba(0,229,160,.025) 100%)}
+    .pt{display:flex;flex-direction:column;align-items:center;gap:28px;width:100%;padding:20px 0}
+    .pt.dn{animation:dn 22s linear infinite}
+    .pt.up{animation:up 26s linear infinite}
+    @keyframes dn{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+    @keyframes up{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
+    .pi{display:flex;flex-direction:column;align-items:center;gap:4px;opacity:.28;transition:opacity .3s;pointer-events:auto}
+    .pi:hover{opacity:.85}
+    .pi svg{width:22px;height:22px}
+    .pi span{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.08em;text-transform:uppercase;text-align:center;color:var(--accent);line-height:1.2}
+    .pdot{width:3px;height:3px;border-radius:50%;background:var(--accent);opacity:.35}
+    .pline{width:1px;height:22px;background:linear-gradient(180deg,transparent,var(--accent),transparent);opacity:.12}
+
+    /* ── ORBS ── */
+    .orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;animation:of 14s ease-in-out infinite}
+    .o1{width:500px;height:500px;background:rgba(0,229,160,.055);top:-120px;right:100px;animation-delay:0s}
+    .o2{width:600px;height:600px;background:rgba(124,109,250,.045);bottom:-160px;left:100px;animation-delay:-6s}
+    @keyframes of{0%,100%{transform:translate(0,0)scale(1)}50%{transform:translate(18px,-28px)scale(1.04)}}
+
+    /* ── LAYOUT ── */
+    .pw{margin:0 var(--pw);position:relative;z-index:1}
+    .wrap{max-width:940px;margin:0 auto;padding:0 32px}
+
+    /* ── NAV ── */
+    nav{position:sticky;top:0;z-index:100;background:rgba(7,7,15,.87);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .ni{display:flex;justify-content:space-between;align-items:center;padding:15px 32px;max-width:940px;margin:0 auto}
+    .nl{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.01em}
+    .nl span{color:var(--accent)}
+    .nls{display:flex;gap:26px;list-style:none}
+    .nls a{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+    .nls a:hover{color:var(--text)}
+
+    /* ── HERO ── */
+    .hero{padding:68px 0 52px;display:grid;grid-template-columns:1fr 260px;gap:36px;align-items:center}
+    .hbadge{display:inline-flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:18px}
+    .hbadge::before{content:'';display:block;width:24px;height:1px;background:var(--accent)}
+    .bdot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+    h1{font-size:clamp(32px,5vw,60px);font-weight:800;line-height:1.05;letter-spacing:-.025em}
+    h1 .ln{display:block;overflow:hidden}
+    h1 .ln span{display:block;animation:su .9s cubic-bezier(.16,1,.3,1) both}
+    h1 .ln:nth-child(2) span{animation-delay:.08s}
+    h1 .ln:nth-child(3) span{animation-delay:.16s}
+    .aw{color:var(--accent)}
+    @keyframes su{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
+    .hsub{margin-top:18px;font-size:13px;color:var(--muted);max-width:450px;line-height:1.75;font-family:'DM Mono',monospace;font-weight:300;animation:fu 1s .4s both}
+    .hcta{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;animation:fu 1s .55s both}
+    @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .bp{background:var(--accent);color:#07070f;padding:11px 22px;border-radius:4px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .15s;display:inline-block}
+    .bp:hover{background:#00ffb3;transform:translateY(-2px)}
+    .bo{background:transparent;color:var(--text);padding:11px 22px;border-radius:4px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);transition:border-color .2s,transform .15s;display:inline-block}
+    .bo:hover{border-color:rgba(255,255,255,.28);transform:translateY(-2px)}
+    .bd{background:transparent;color:var(--accent2);padding:11px 22px;border-radius:4px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(124,109,250,.35);transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+    .bd:hover{background:rgba(124,109,250,.1);border-color:var(--accent2);transform:translateY(-2px)}
+    .hstats{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;animation:fu 1s .7s both}
+    .stat{background:var(--surface);padding:16px 18px;transition:background .2s}
+    .stat:hover{background:rgba(255,255,255,.03)}
+    .sn{font-size:26px;font-weight:800;line-height:1}
+    .sl{font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;margin-top:4px}
+
+    /* ── PHOTO CARD ── */
+    .hphoto{animation:fu 1s .3s both;display:flex;flex-direction:column;align-items:center;gap:0}
+    .photo-frame{width:220px;height:260px;border-radius:14px;border:1px solid var(--border);overflow:hidden;position:relative;transition:border-color .3s;background:var(--surface)}
+    .photo-frame:hover{border-color:rgba(0,229,160,.35)}
+    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+    .photo-corner{position:absolute;width:14px;height:14px;border-color:var(--accent);border-style:solid;opacity:.6}
+    .photo-corner.tl{top:8px;left:8px;border-width:1.5px 0 0 1.5px}
+    .photo-corner.tr{top:8px;right:8px;border-width:1.5px 1.5px 0 0}
+    .photo-corner.bl{bottom:8px;left:8px;border-width:0 0 1.5px 1.5px}
+    .photo-corner.br{bottom:8px;right:8px;border-width:0 1.5px 1.5px 0}
+
+    /* ── TECH STRIP ── */
+    .tstrip{position:relative;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:15px 0;background:linear-gradient(90deg,var(--bg) 0%,transparent 6%,transparent 94%,var(--bg) 100%)}
+    .tscroll{display:flex;gap:38px;align-items:center;animation:scroll 26s linear infinite;white-space:nowrap;width:max-content}
+    .tstrip:hover .tscroll{animation-play-state:paused}
+    @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .ti{display:flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.06em;flex-shrink:0;transition:color .2s}
+    .ti:hover{color:var(--accent)}
+    .ti svg{width:17px;height:17px}
+
+    /* ── SECTIONS ── */
+    section{padding:60px 0;border-top:1px solid var(--border)}
+    .sh{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+    .snum{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.12em}
+    .stit{font-size:21px;font-weight:800;letter-spacing:-.01em}
+    .sline{flex:1;height:1px;background:var(--border)}
+
+    /* ── EXP ── */
+    .ei{position:relative;padding-left:24px;padding-bottom:32px}
+    .ei:last-child{padding-bottom:0}
+    .ei::before{content:'';position:absolute;left:0;top:7px;width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px rgba(0,229,160,.4)}
+    .ei::after{content:'';position:absolute;left:3.5px;top:19px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--border),transparent)}
+    .ei:last-child::after{display:none}
+    .eco{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+    .ero{font-size:16px;font-weight:700;margin-bottom:3px}
+    .ep{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)}
+    .eb{list-style:none;margin-top:10px}
+    .eb li{font-size:12.5px;color:var(--muted);line-height:1.65;padding-left:12px;position:relative;margin-bottom:5px}
+    .eb li::before{content:'—';position:absolute;left:0;color:rgba(255,255,255,.12)}
+
+    /* ── SKILLS ── */
+    .sg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .sb{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;transition:border-color .25s,transform .2s,background .2s}
+    .sb:hover{border-color:rgba(0,229,160,.2);transform:translateY(-3px);background:rgba(255,255,255,.02)}
+    .sbt{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+    .tags{display:flex;flex-wrap:wrap;gap:5px}
+    .tag{font-family:'DM Mono',monospace;font-size:9.5px;background:rgba(255,255,255,.04);color:var(--muted);padding:3px 9px;border-radius:3px;border:1px solid var(--border);transition:all .18s}
+    .tag:hover{color:var(--text);border-color:rgba(255,255,255,.16)}
+
+    /* ── CERTS ── */
+    .cl{display:flex;flex-direction:column;gap:9px}
+    .ci{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;display:flex;align-items:center;gap:12px;transition:border-color .2s,background .2s,transform .2s}
+    .ci:hover{border-color:rgba(0,229,160,.2);background:rgba(255,255,255,.02);transform:translateX(4px)}
+    .cic{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+    .cn{font-size:13.5px;font-weight:700}
+    .cis{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px}
+
+    /* ── CONTACT ── */
+    .cg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .cc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;transition:border-color .2s,transform .2s,background .2s;display:block}
+    .cc:hover{border-color:rgba(0,229,160,.3);transform:translateY(-3px);background:rgba(255,255,255,.02)}
+    .clbl{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+    .cv{font-family:'DM Mono',monospace;font-size:12px;color:var(--text)}
+    .ca{color:var(--accent);font-size:15px;margin-top:7px;display:block;transition:transform .2s}
+    .cc:hover .ca{transform:translate(3px,-3px)}
+
+    /* ── FOOTER ── */
+    footer{border-top:1px solid var(--border);padding:28px 0;text-align:center}
+    .fn{font-size:13px;font-weight:700}
+    .fs{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:5px}
+    .fs span{color:var(--accent)}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:900px){
+      :root{--pw:0px}
+      .sp{display:none}
+      .hero{grid-template-columns:1fr}
+      .hphoto{order:-1}
+      .photo-frame{width:100%;height:200px}
+      .sg,.cg{grid-template-columns:1fr}
+      .nls{display:none}
     }
-    .side-panel.left  { left: 0;  border-right: 1px solid var(--border); background: linear-gradient(180deg, rgba(0,229,160,0.025) 0%, rgba(0,0,0,0) 50%, rgba(124,109,250,0.025) 100%); }
-    .side-panel.right { right: 0; border-left:  1px solid var(--border); background: linear-gradient(180deg, rgba(124,109,250,0.025) 0%, rgba(0,0,0,0) 50%, rgba(0,229,160,0.025) 100%); }
-    .panel-track { display: flex; flex-direction: column; align-items: center; gap: 32px; width: 100%; padding: 24px 0; }
-    .panel-track.scroll-down { animation: panelDown 24s linear infinite; }
-    .panel-track.scroll-up   { animation: panelUp   28s linear infinite; }
-    @keyframes panelDown { 0%{transform:translateY(0)} 100%{transform:translateY(-50%)} }
-    @keyframes panelUp   { 0%{transform:translateY(-50%)} 100%{transform:translateY(0)} }
-    .p-icon { display: flex; flex-direction: column; align-items: center; gap: 5px; opacity: 0.3; transition: opacity 0.3s; pointer-events: auto; }
-    .p-icon:hover { opacity: 0.8; }
-    .p-icon svg { width: 24px; height: 24px; }
-    .p-lbl { font-family: 'DM Mono', monospace; font-size: 7.5px; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; color: var(--accent); line-height: 1.2; }
-    .p-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--accent); opacity: 0.4; }
-    .p-line { width: 1px; height: 24px; background: linear-gradient(180deg, transparent, var(--accent), transparent); opacity: 0.15; }
-
-    /* ORBS */
-    .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; animation: orbF 14s ease-in-out infinite; }
-    .orb1 { width: 500px; height: 500px; background: rgba(0,229,160,0.055); top: -120px; right: 100px; animation-delay: 0s; }
-    .orb2 { width: 600px; height: 600px; background: rgba(124,109,250,0.045); bottom: -160px; left: 100px; animation-delay: -6s; }
-    @keyframes orbF { 0%,100%{transform:translate(0,0)scale(1)} 50%{transform:translate(18px,-28px)scale(1.04)} }
-
-    /* LAYOUT */
-    .page-wrap { margin: 0 var(--panel-w); position: relative; z-index: 1; }
-    .container { max-width: 940px; margin: 0 auto; padding: 0 32px; }
-
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(7,7,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-    .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; max-width: 940px; margin: 0 auto; }
-    .nav-logo { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-
-    /* HERO */
-    .hero { padding: 72px 0 56px; display: grid; grid-template-columns: 1fr 250px; gap: 36px; align-items: center; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 10px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; }
-    .hero-badge::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
-    .bdot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
-    .hero h1 { font-size: clamp(34px, 5.2vw, 62px); font-weight: 800; line-height: 1.04; letter-spacing: -0.025em; }
-    .hero h1 .line { display: block; overflow: hidden; }
-    .hero h1 .line span { display: block; animation: su 0.9s cubic-bezier(0.16,1,0.3,1) both; }
-    .hero h1 .line:nth-child(2) span { animation-delay: 0.08s; }
-    .hero h1 .line:nth-child(3) span { animation-delay: 0.16s; }
-    .aw { color: var(--accent); }
-    @keyframes su { from{transform:translateY(110%);opacity:0} to{transform:translateY(0);opacity:1} }
-    .hero-sub { margin-top: 20px; font-size: 13.5px; color: var(--muted); max-width: 460px; line-height: 1.75; font-family: 'DM Mono', monospace; font-weight: 300; animation: fu 1s 0.4s both; }
-    .hero-cta { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; animation: fu 1s 0.55s both; }
-    @keyframes fu { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-    .btn-p { background: var(--accent); color: #07070f; padding: 11px 24px; border-radius: 4px; font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background .2s, transform .15s; display: inline-block; }
-    .btn-p:hover { background: #00ffb3; transform: translateY(-2px); }
-    .btn-o { background: transparent; color: var(--text); padding: 11px 24px; border-radius: 4px; font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--border); transition: border-color .2s, transform .15s; display: inline-block; }
-    .btn-o:hover { border-color: rgba(255,255,255,0.28); transform: translateY(-2px); }
-    .hero-stats { margin-top: 40px; display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; animation: fu 1s 0.7s both; }
-    .stat { background: var(--surface); padding: 18px 20px; transition: background .2s; }
-    .stat:hover { background: rgba(255,255,255,.03); }
-    .stat-num { font-size: 28px; font-weight: 800; line-height: 1; }
-    .stat-lbl { font-size: 10px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 4px; }
-
-    /* CHARACTER */
-    .hero-char { animation: fu 1s 0.3s both; display: flex; align-items: flex-end; justify-content: center; }
-
-    /* TECH STRIP */
-    .tstrip { position: relative; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0; background: linear-gradient(90deg,var(--bg) 0%,transparent 6%,transparent 94%,var(--bg) 100%); }
-    .tscroll { display: flex; gap: 40px; align-items: center; animation: stroll 26s linear infinite; white-space: nowrap; width: max-content; }
-    .tstrip:hover .tscroll { animation-play-state: paused; }
-    @keyframes stroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    .ti { display: flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; transition: color .2s; flex-shrink: 0; }
-    .ti:hover { color: var(--accent); }
-    .ti svg { width: 18px; height: 18px; }
-
-    /* SECTIONS */
-    section { padding: 64px 0; border-top: 1px solid var(--border); }
-    .sh { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
-    .sn { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.12em; }
-    .st { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
-    .sl { flex: 1; height: 1px; background: var(--border); }
-
-    /* EXPERIENCE */
-    .ei { position: relative; padding-left: 26px; padding-bottom: 36px; }
-    .ei:last-child { padding-bottom: 0; }
-    .ei::before { content: ''; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px rgba(0,229,160,.4); }
-    .ei::after { content: ''; position: absolute; left: 3.5px; top: 20px; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--border), transparent); }
-    .ei:last-child::after { display: none; }
-    .eco { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
-    .ero { font-size: 17px; font-weight: 700; margin-bottom: 3px; }
-    .ep { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
-    .eb { list-style: none; margin-top: 12px; }
-    .eb li { font-size: 13px; color: var(--muted); line-height: 1.65; padding-left: 14px; position: relative; margin-bottom: 6px; }
-    .eb li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,.12); }
-
-    /* SKILLS */
-    .sg { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
-    .sb { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: border-color .25s, transform .2s, background .2s; }
-    .sb:hover { border-color: rgba(0,229,160,.22); transform: translateY(-3px); background: rgba(255,255,255,.02); }
-    .sbt { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag { font-family: 'DM Mono', monospace; font-size: 10px; background: rgba(255,255,255,.04); color: var(--muted); padding: 4px 10px; border-radius: 3px; border: 1px solid var(--border); transition: all .18s; }
-    .tag:hover { color: var(--text); border-color: rgba(255,255,255,.16); }
-
-    /* CERTS */
-    .cl { display: flex; flex-direction: column; gap: 10px; }
-    .ci { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; display: flex; align-items: center; gap: 14px; transition: border-color .2s, background .2s, transform .2s; }
-    .ci:hover { border-color: rgba(0,229,160,.2); background: rgba(255,255,255,.02); transform: translateX(4px); }
-    .cic { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-    .cn { font-size: 14px; font-weight: 700; }
-    .cis { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 2px; }
-
-    /* CONTACT */
-    .cg { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
-    .cc { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-decoration: none; transition: border-color .2s, transform .2s, background .2s; display: block; }
-    .cc:hover { border-color: rgba(0,229,160,.3); transform: translateY(-3px); background: rgba(255,255,255,.02); }
-    .clbl { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
-    .cv { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text); }
-    .ca { color: var(--accent); font-size: 16px; margin-top: 8px; display: block; transition: transform .2s; }
-    .cc:hover .ca { transform: translate(3px,-3px); }
-
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
-    .fn { font-size: 13px; font-weight: 700; }
-    .fs { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); margin-top: 6px; }
-    .fs span { color: var(--accent); }
-
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 900px) {
-      :root { --panel-w: 0px; }
-      .side-panel { display: none; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-char { order: -1; }
-      .sg, .cg { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-    ::selection { background: rgba(0,229,160,.2); color: var(--text); }
+    ::selection{background:rgba(0,229,160,.2);color:var(--text)}
   </style>
 </head>
 <body>
 
-<!-- LEFT PANEL -->
-<div class="side-panel left">
-  <div class="panel-track scroll-down">
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="p-lbl">Laptop</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#7c6dfa" stroke="none"/><circle cx="19" cy="18" r="1" fill="#7c6dfa" stroke="none"/></svg><span class="p-lbl">Server</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#00e5a0" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span class="p-lbl">Mobile</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span class="p-lbl">Email</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span class="p-lbl">Cloud</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span class="p-lbl">Phone</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span class="p-lbl">DB</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="p-lbl">Security</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span class="p-lbl">DevOps</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="p-lbl">Chat</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span class="p-lbl">24/7</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span class="p-lbl">Network</span></div>
-    <div class="p-line"></div>
-    <!-- duplicate set -->
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="p-lbl">Laptop</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#7c6dfa" stroke="none"/><circle cx="19" cy="18" r="1" fill="#7c6dfa" stroke="none"/></svg><span class="p-lbl">Server</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#00e5a0" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span class="p-lbl">Mobile</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span class="p-lbl">Email</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span class="p-lbl">Cloud</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span class="p-lbl">Phone</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span class="p-lbl">DB</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="p-lbl">Security</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span class="p-lbl">DevOps</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="p-lbl">Chat</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span class="p-lbl">24/7</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span class="p-lbl">Network</span></div>
-    <div class="p-line"></div>
-  </div>
-</div>
-
-<!-- RIGHT PANEL -->
-<div class="side-panel right">
-  <div class="panel-track scroll-up">
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span class="p-lbl">Phone</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span class="p-lbl">Email</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="p-lbl">Chat</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#00e5a0" stroke="none"/><circle cx="19" cy="18" r="1" fill="#00e5a0" stroke="none"/></svg><span class="p-lbl">Server</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="p-lbl">Security</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span class="p-lbl">Cloud</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#7c6dfa" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span class="p-lbl">Mobile</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span class="p-lbl">DevOps</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span class="p-lbl">DB</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span class="p-lbl">24/7</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="p-lbl">Laptop</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span class="p-lbl">Network</span></div>
-    <div class="p-line"></div>
+<!-- ━━━ LEFT PANEL ━━━ -->
+<div class="sp L">
+  <div class="pt dn">
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Laptop</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#7c6dfa" stroke="none"/><circle cx="19" cy="18" r="1" fill="#7c6dfa" stroke="none"/></svg><span>Server</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#00e5a0" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span>Mobile</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span>Email</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span>Cloud</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span>Phone</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span>DB</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Security</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>DevOps</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>Chat</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span>24/7</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span>Network</span></div>
+    <div class="pline"></div>
     <!-- duplicate -->
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span class="p-lbl">Phone</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span class="p-lbl">Email</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="p-lbl">Chat</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#00e5a0" stroke="none"/><circle cx="19" cy="18" r="1" fill="#00e5a0" stroke="none"/></svg><span class="p-lbl">Server</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="p-lbl">Security</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span class="p-lbl">Cloud</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#7c6dfa" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span class="p-lbl">Mobile</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span class="p-lbl">DevOps</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span class="p-lbl">DB</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span class="p-lbl">24/7</span></div>
-    <div class="p-line"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="p-lbl">Laptop</span></div>
-    <div class="p-dot"></div>
-    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span class="p-lbl">Network</span></div>
-    <div class="p-line"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Laptop</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#7c6dfa" stroke="none"/><circle cx="19" cy="18" r="1" fill="#7c6dfa" stroke="none"/></svg><span>Server</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#00e5a0" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span>Mobile</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span>Email</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span>Cloud</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span>Phone</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span>DB</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Security</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>DevOps</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>Chat</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span>24/7</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span>Network</span></div>
+    <div class="pline"></div>
   </div>
 </div>
 
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
+<!-- ━━━ RIGHT PANEL ━━━ -->
+<div class="sp R">
+  <div class="pt up">
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span>Phone</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span>Email</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>Chat</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#00e5a0" stroke="none"/><circle cx="19" cy="18" r="1" fill="#00e5a0" stroke="none"/></svg><span>Server</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Security</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span>Cloud</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#7c6dfa" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span>Mobile</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>DevOps</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span>DB</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span>24/7</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Laptop</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span>Network</span></div>
+    <div class="pline"></div>
+    <!-- duplicate -->
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span>Phone</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg><span>Email</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>Chat</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/><circle cx="19" cy="6" r="1" fill="#00e5a0" stroke="none"/><circle cx="19" cy="18" r="1" fill="#00e5a0" stroke="none"/></svg><span>Server</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Security</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg><span>Cloud</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1.2" fill="#7c6dfa" stroke="none"/><path d="M9 6h6M9 9h4"/></svg><span>Mobile</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>DevOps</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg><span>DB</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><span>24/7</span></div>
+    <div class="pline"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#7c6dfa" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Laptop</span></div>
+    <div class="pdot"></div>
+    <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="#00e5a0" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg><span>Network</span></div>
+    <div class="pline"></div>
+  </div>
+</div>
 
-<div class="page-wrap">
+<div class="o1 orb"></div>
+<div class="o2 orb"></div>
+
+<div class="pw">
   <nav>
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Aung Ko Myat <span>(Lucas)</span></a>
-      <ul class="nav-links">
+    <div class="ni">
+      <a href="#" class="nl">Aung Ko Myat <span>(Lucas)</span></a>
+      <ul class="nls">
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certifications">Certs</a></li>
@@ -298,154 +297,197 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="wrap">
+    <!-- HERO -->
     <div class="hero">
       <div>
-        <div class="hero-badge"><span class="bdot"></span>Available for remote work</div>
+        <div class="hbadge"><span class="bdot"></span>Available for remote work</div>
         <h1>
-          <span class="line"><span>Customer &amp;</span></span>
-          <span class="line"><span>Technical <span class="aw">Support</span></span></span>
-          <span class="line"><span>Specialist.</span></span>
+          <span class="ln"><span>Customer &amp;</span></span>
+          <span class="ln"><span>Technical <span class="aw">Support</span></span></span>
+          <span class="ln"><span>Specialist.</span></span>
         </h1>
-        <p class="hero-sub">5+ years building resilient support systems, leading teams, and managing cloud infrastructure across US, UK, AU &amp; EU time zones.</p>
-        <div class="hero-cta">
-          <a class="btn-p" href="mailto:aungkomyat.lucas@gmail.com">Get in touch</a>
-          <a class="btn-o" href="https://linkedin.com/in/aung-ko-myat-835405144" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+        <p class="hsub">5+ years building resilient support systems, leading teams, and managing cloud infrastructure across US, UK, AU &amp; EU time zones.</p>
+        <div class="hcta">
+          <a class="bp" href="mailto:aungkomyat.lucas@gmail.com">Get in touch</a>
+          <a class="bo" href="https://linkedin.com/in/aung-ko-myat-835405144" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+          <a class="bd" href="Aung_Ko_Myat_Resume.pdf" download="Aung_Ko_Myat_Resume.pdf">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Resume
+          </a>
         </div>
-        <div class="hero-stats">
-          <div class="stat"><div class="stat-num">5+</div><div class="stat-lbl">Years exp.</div></div>
-          <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Certs</div></div>
-          <div class="stat"><div class="stat-num">4+</div><div class="stat-lbl">Regions</div></div>
+        <div class="hstats">
+          <div class="stat"><div class="sn">5+</div><div class="sl">Years exp.</div></div>
+          <div class="stat"><div class="sn">3</div><div class="sl">Certs</div></div>
+          <div class="stat"><div class="sn">4+</div><div class="sl">Regions</div></div>
         </div>
       </div>
 
-      <!-- ILLUSTRATED CHARACTER AT DESK -->
-      <div class="hero-char">
-        <svg width="240" height="290" viewBox="0 0 240 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Floor -->
-          <line x1="10" y1="268" x2="230" y2="268" stroke="#00e5a0" stroke-width="0.5" stroke-dasharray="4,6" opacity="0.25"/>
-          <!-- Desk -->
-          <rect x="18" y="202" width="204" height="10" rx="3" fill="#14142a" stroke="#00e5a0" stroke-width="0.8" opacity="0.9"/>
-          <rect x="28" y="211" width="9" height="57" rx="2" fill="#0f0f1e"/>
-          <rect x="203" y="211" width="9" height="57" rx="2" fill="#0f0f1e"/>
-          <!-- Monitor -->
-          <rect x="62" y="130" width="116" height="74" rx="4" fill="#0c0c1e" stroke="#7c6dfa" stroke-width="1.2"/>
-          <rect x="66" y="134" width="108" height="66" rx="2" fill="#080818"/>
-          <!-- Screen glow effect -->
-          <rect x="66" y="134" width="108" height="66" rx="2" fill="url(#screenGlow)" opacity="0.3"/>
-          <!-- Code on screen -->
-          <rect x="73" y="143" width="52" height="2.5" rx="1" fill="#00e5a0" opacity="0.85"/>
-          <rect x="73" y="150" width="36" height="2.5" rx="1" fill="#7c6dfa" opacity="0.75"/>
-          <rect x="78" y="157" width="60" height="2.5" rx="1" fill="#00e5a0" opacity="0.55"/>
-          <rect x="78" y="164" width="42" height="2.5" rx="1" fill="#7c6dfa" opacity="0.65"/>
-          <rect x="73" y="171" width="28" height="2.5" rx="1" fill="#00e5a0" opacity="0.75"/>
-          <rect x="108" y="143" width="58" height="2.5" rx="1" fill="#7c6dfa" opacity="0.55"/>
-          <rect x="113" y="150" width="44" height="2.5" rx="1" fill="#00e5a0" opacity="0.45"/>
-          <rect x="108" y="157" width="40" height="2.5" rx="1" fill="#7c6dfa" opacity="0.65"/>
-          <rect x="108" y="164" width="52" height="2.5" rx="1" fill="#00e5a0" opacity="0.5"/>
-          <!-- Cursor blink -->
-          <rect x="137" y="171" width="2" height="7" rx="1" fill="#00e5a0" opacity="0.9">
-            <animate attributeName="opacity" values="0.9;0;0.9" dur="1.1s" repeatCount="indefinite"/>
-          </rect>
-          <!-- Monitor stand -->
-          <rect x="113" y="203" width="14" height="6" rx="1" fill="#14142a" stroke="#7c6dfa" stroke-width="0.8"/>
-          <rect x="103" y="208" width="34" height="4" rx="2" fill="#14142a" stroke="#7c6dfa" stroke-width="0.8"/>
-          <!-- Keyboard -->
-          <rect x="72" y="193" width="96" height="11" rx="2" fill="#0f0f1e" stroke="#00e5a0" stroke-width="0.7" opacity="0.9"/>
-          <rect x="75" y="195" width="7" height="5.5" rx="1" fill="#1a1a2e"/>
-          <rect x="84" y="195" width="7" height="5.5" rx="1" fill="#1a1a2e"/>
-          <rect x="93" y="195" width="7" height="5.5" rx="1" fill="#1a1a2e"/>
-          <rect x="102" y="195" width="7" height="5.5" rx="1" fill="#1a1a2e"/>
-          <rect x="111" y="195" width="7" height="5.5" rx="1" fill="#1a1a2e"/>
-          <rect x="120" y="195" width="24" height="5.5" rx="1" fill="#1a1a2e"/>
-          <rect x="146" y="195" width="7" height="5.5" rx="1" fill="#1a1a2e"/>
-          <rect x="155" y="195" width="7" height="5.5" rx="1" fill="#00e5a0" opacity="0.35"/>
-          <!-- Mouse -->
-          <rect x="173" y="192" width="15" height="20" rx="7" fill="#0f0f1e" stroke="#7c6dfa" stroke-width="0.8"/>
-          <line x1="180" y1="196" x2="180" y2="205" stroke="#7c6dfa" stroke-width="0.7" opacity="0.6"/>
-          <!-- Coffee -->
-          <rect x="35" y="184" width="20" height="19" rx="3" fill="#14142a" stroke="#00e5a0" stroke-width="0.9"/>
-          <path d="M55 188 Q62 188 62 193 Q62 197 55 197" stroke="#00e5a0" stroke-width="0.9" fill="none"/>
-          <path d="M40 183 Q41.5 178 40 173" stroke="#00e5a0" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.5"><animate attributeName="opacity" values="0.5;0;0.5" dur="2.2s" repeatCount="indefinite"/></path>
-          <path d="M45 181 Q46.5 176 45 171" stroke="#00e5a0" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.3"><animate attributeName="opacity" values="0.3;0;0.3" dur="2.7s" repeatCount="indefinite"/></path>
-          <!-- Plant pot -->
-          <rect x="194" y="182" width="16" height="20" rx="3" fill="#14142a" stroke="#00e5a0" stroke-width="0.7"/>
-          <ellipse cx="202" cy="180" rx="11" ry="8" fill="#0a1f10" stroke="#00e5a0" stroke-width="0.8"/>
-          <line x1="202" y1="186" x2="202" y2="172" stroke="#00c880" stroke-width="0.9"/>
-          <ellipse cx="197" cy="177" rx="6" ry="3.5" fill="#0a1f10" stroke="#00e5a0" stroke-width="0.7" transform="rotate(-25 197 177)"/>
-          <ellipse cx="207" cy="176" rx="6" ry="3.5" fill="#0a1f10" stroke="#00e5a0" stroke-width="0.7" transform="rotate(25 207 176)"/>
-          <!-- Chair back -->
-          <rect x="99" y="103" width="42" height="54" rx="5" fill="#0e0e20" stroke="#7c6dfa" stroke-width="1" opacity="0.85"/>
-          <rect x="103" y="107" width="34" height="46" rx="4" fill="#141428" opacity="0.6"/>
-          <!-- Torso -->
-          <rect x="101" y="145" width="38" height="40" rx="7" fill="#2a1a5e"/>
-          <line x1="120" y1="148" x2="120" y2="185" stroke="#7c6dfa" stroke-width="0.6" opacity="0.4"/>
-          <path d="M110 148 L120 156 L130 148" stroke="#00e5a0" stroke-width="0.8" fill="none" opacity="0.7"/>
-          <!-- Left arm -->
-          <path d="M101 158 Q85 168 78 193" stroke="#f0c0a0" stroke-width="8" stroke-linecap="round" fill="none"/>
-          <ellipse cx="78" cy="195" rx="6" ry="4" fill="#f0c0a0"/>
-          <!-- Right arm -->
-          <path d="M139 158 Q155 168 173 193" stroke="#f0c0a0" stroke-width="8" stroke-linecap="round" fill="none"/>
-          <ellipse cx="173" cy="195" rx="6" ry="4" fill="#f0c0a0"/>
-          <!-- Neck -->
-          <rect x="113" y="134" width="14" height="15" rx="5" fill="#f0c0a0"/>
-          <!-- Head -->
-          <ellipse cx="120" cy="120" rx="21" ry="23" fill="#f0c0a0"/>
-          <!-- Hair -->
-          <path d="M99 114 Q102 95 120 93 Q138 95 141 114 Q139 100 120 98 Q101 100 99 114Z" fill="#1e0e06"/>
-          <ellipse cx="101" cy="116" rx="5.5" ry="9" fill="#1e0e06"/>
-          <ellipse cx="139" cy="116" rx="5.5" ry="9" fill="#1e0e06"/>
-          <!-- Face: eyes -->
-          <ellipse cx="112" cy="121" rx="3.5" ry="3.5" fill="white"/>
-          <ellipse cx="128" cy="121" rx="3.5" ry="3.5" fill="white"/>
-          <ellipse cx="113" cy="122" rx="2" ry="2" fill="#2a1006"/>
-          <ellipse cx="129" cy="122" rx="2" ry="2" fill="#2a1006"/>
-          <circle cx="113.7" cy="121.3" r="0.7" fill="white"/>
-          <circle cx="129.7" cy="121.3" r="0.7" fill="white"/>
-          <!-- Glasses -->
-          <rect x="107" y="118" width="12" height="8" rx="3" fill="none" stroke="#7c6dfa" stroke-width="1.1"/>
-          <rect x="121" y="118" width="12" height="8" rx="3" fill="none" stroke="#7c6dfa" stroke-width="1.1"/>
-          <line x1="119" y1="122" x2="121" y2="122" stroke="#7c6dfa" stroke-width="1"/>
-          <line x1="107" y1="122" x2="104" y2="121" stroke="#7c6dfa" stroke-width="0.9"/>
-          <line x1="133" y1="122" x2="136" y2="121" stroke="#7c6dfa" stroke-width="0.9"/>
-          <!-- Smile -->
-          <path d="M114 131 Q120 134 126 131" stroke="#bf7040" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-          <!-- Headset -->
-          <path d="M100 114 Q99 105 120 103 Q141 105 140 114" stroke="#00e5a0" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-          <rect x="98" y="114" width="5" height="10" rx="2.5" fill="#00e5a0" opacity="0.95"/>
-          <rect x="137" y="114" width="5" height="10" rx="2.5" fill="#00e5a0" opacity="0.95"/>
-          <path d="M140 121 Q147 121 149 128" stroke="#00e5a0" stroke-width="1.2" fill="none"/>
-          <circle cx="149" cy="129" r="2.5" fill="#00e5a0" opacity="0.85"/>
-          <circle cx="149" cy="129" r="2.5" fill="#00e5a0" opacity="0.4"><animate attributeName="r" values="2.5;5;2.5" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0;0.4" dur="1.8s" repeatCount="indefinite"/></circle>
-          <!-- Chair seat -->
-          <rect x="91" y="183" width="58" height="15" rx="5" fill="#0e0e20" stroke="#7c6dfa" stroke-width="0.9"/>
-          <ellipse cx="120" cy="205" rx="24" ry="5" fill="#0c0c1e" stroke="#7c6dfa" stroke-width="0.7" opacity="0.7"/>
-          <circle cx="99" cy="208" r="3.5" fill="#14142a" stroke="#7c6dfa" stroke-width="0.7"/>
-          <circle cx="120" cy="209" r="3.5" fill="#14142a" stroke="#7c6dfa" stroke-width="0.7"/>
-          <circle cx="141" cy="208" r="3.5" fill="#14142a" stroke="#7c6dfa" stroke-width="0.7"/>
-          <!-- Floating notification: ticket -->
-          <rect x="153" y="106" width="60" height="22" rx="11" fill="#081a10" stroke="#00e5a0" stroke-width="0.9" opacity="0.9"><animate attributeName="y" values="106;100;106" dur="3.2s" repeatCount="indefinite"/></rect>
-          <text x="163" y="120" font-family="monospace" font-size="9" fill="#00e5a0" opacity="0.9"><animate attributeName="opacity" values="0.9;1;0.9" dur="3.2s" repeatCount="indefinite"/>+1 ticket</text>
-          <!-- Floating notification: SLA -->
-          <rect x="27" y="110" width="54" height="22" rx="11" fill="#140a28" stroke="#7c6dfa" stroke-width="0.9" opacity="0.85"><animate attributeName="y" values="110;104;110" dur="3.9s" repeatCount="indefinite"/></rect>
-          <text x="38" y="124" font-family="monospace" font-size="9" fill="#7c6dfa" opacity="0.85"><animate attributeName="opacity" values="0.85;1;0.85" dur="3.9s" repeatCount="indefinite"/>SLA ✓</text>
-          <!-- WiFi signal top right -->
-          <path d="M199 150 Q205 144 211 150" stroke="#00e5a0" stroke-width="1.4" fill="none" stroke-linecap="round"><animate attributeName="opacity" values="0.45;0.9;0.45" dur="2.6s" repeatCount="indefinite"/></path>
-          <path d="M195 146 Q205 137 215 146" stroke="#00e5a0" stroke-width="1.4" fill="none" stroke-linecap="round"><animate attributeName="opacity" values="0.25;0.65;0.25" dur="2.6s" repeatCount="indefinite"/></path>
-          <circle cx="205" cy="153" r="2.2" fill="#00e5a0"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.6s" repeatCount="indefinite"/></circle>
-          <!-- Screen glow gradient def -->
-          <defs>
-            <radialGradient id="screenGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.15"/>
-              <stop offset="100%" stop-color="#7c6dfa" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-        </svg>
+      <!-- PHOTO + ANIME CHARACTER stacked -->
+      <div class="hphoto">
+        <!-- Real photo -->
+        <div class="photo-frame">
+          <div class="photo-corner tl"></div>
+          <div class="photo-corner tr"></div>
+          <div class="photo-corner bl"></div>
+          <div class="photo-corner br"></div>
+          <img src="Lucas.png" alt="Aung Ko Myat (Lucas)" onerror="this.style.display='none';this.parentElement.style.background='var(--surface)'"/>
+        </div>
+        <!-- Anime character below photo -->
+        <div style="margin-top:16px;opacity:0.95">
+          <svg width="220" height="210" viewBox="0 0 220 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- DESK -->
+            <rect x="10" y="162" width="200" height="8" rx="3" fill="#14142a" stroke="#00e5a0" stroke-width="0.8"/>
+            <rect x="20" y="169" width="7" height="38" rx="2" fill="#0f0f1e"/>
+            <rect x="193" y="169" width="7" height="38" rx="2" fill="#0f0f1e"/>
+
+            <!-- LAPTOP (open, on desk) -->
+            <!-- Screen half -->
+            <rect x="58" y="110" width="104" height="55" rx="3" fill="#0a0a1a" stroke="#7c6dfa" stroke-width="1.1"/>
+            <rect x="62" y="114" width="96" height="47" rx="2" fill="#080812"/>
+            <!-- Code lines on screen -->
+            <rect x="67" y="121" width="44" height="2.5" rx="1" fill="#00e5a0" opacity="0.85"/>
+            <rect x="67" y="127" width="30" height="2.5" rx="1" fill="#7c6dfa" opacity="0.7"/>
+            <rect x="72" y="133" width="52" height="2.5" rx="1" fill="#00e5a0" opacity="0.5"/>
+            <rect x="72" y="139" width="36" height="2.5" rx="1" fill="#7c6dfa" opacity="0.6"/>
+            <rect x="67" y="145" width="24" height="2.5" rx="1" fill="#00e5a0" opacity="0.75"/>
+            <rect x="118" y="121" width="35" height="2.5" rx="1" fill="#7c6dfa" opacity="0.5"/>
+            <rect x="118" y="127" width="26" height="2.5" rx="1" fill="#00e5a0" opacity="0.4"/>
+            <rect x="118" y="133" width="38" height="2.5" rx="1" fill="#7c6dfa" opacity="0.55"/>
+            <!-- Cursor -->
+            <rect x="123" y="144" width="1.5" height="6" rx="1" fill="#00e5a0"><animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/></rect>
+            <!-- Base half (keyboard) -->
+            <rect x="55" y="162" width="110" height="8" rx="2" fill="#14142a" stroke="#7c6dfa" stroke-width="0.9"/>
+            <rect x="58" y="163.5" width="8" height="4.5" rx="1" fill="#1a1a30"/>
+            <rect x="68" y="163.5" width="8" height="4.5" rx="1" fill="#1a1a30"/>
+            <rect x="78" y="163.5" width="8" height="4.5" rx="1" fill="#1a1a30"/>
+            <rect x="88" y="163.5" width="8" height="4.5" rx="1" fill="#1a1a30"/>
+            <rect x="98" y="163.5" width="20" height="4.5" rx="1" fill="#1a1a30"/>
+            <rect x="120" y="163.5" width="8" height="4.5" rx="1" fill="#1a1a30"/>
+            <rect x="130" y="163.5" width="8" height="4.5" rx="1" fill="#00e5a0" opacity="0.3"/>
+            <!-- Hinge -->
+            <rect x="58" y="160" width="104" height="3" rx="1" fill="#20203a"/>
+
+            <!-- COFFEE MUG -->
+            <rect x="26" y="150" width="16" height="14" rx="2.5" fill="#14142a" stroke="#00e5a0" stroke-width="0.8"/>
+            <path d="M42 153 Q47 153 47 157 Q47 160 42 160" stroke="#00e5a0" stroke-width="0.8" fill="none"/>
+            <path d="M30 149 Q31 145 30 141" stroke="#00e5a0" stroke-width="0.7" fill="none" stroke-linecap="round"><animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/></path>
+            <path d="M34 148 Q35 144 34 140" stroke="#00e5a0" stroke-width="0.7" fill="none" stroke-linecap="round"><animate attributeName="opacity" values="0.25;0;0.25" dur="2.5s" repeatCount="indefinite"/></path>
+
+            <!-- CHAIR BACK (anime style — high-back ergonomic) -->
+            <rect x="86" y="75" width="48" height="58" rx="8" fill="#111128" stroke="#7c6dfa" stroke-width="1"/>
+            <rect x="90" y="79" width="40" height="50" rx="6" fill="#16162e" opacity="0.7"/>
+            <!-- Chair accent line -->
+            <rect x="88" y="90" width="4" height="28" rx="2" fill="#7c6dfa" opacity="0.5"/>
+            <rect x="128" y="90" width="4" height="28" rx="2" fill="#7c6dfa" opacity="0.5"/>
+
+            <!-- BODY — anime style hoodie -->
+            <!-- Torso -->
+            <path d="M92 128 Q86 132 84 162 L136 162 Q134 132 128 128 Z" fill="#1e1640"/>
+            <!-- Hoodie pocket -->
+            <path d="M100 148 Q110 146 120 148 Q120 158 110 158 Q100 158 100 148Z" fill="#2a2050" stroke="#7c6dfa" stroke-width="0.6" opacity="0.8"/>
+            <!-- Hoodie drawstrings -->
+            <line x1="107" y1="135" x2="105" y2="148" stroke="#7c6dfa" stroke-width="0.7" opacity="0.5"/>
+            <line x1="113" y1="135" x2="115" y2="148" stroke="#7c6dfa" stroke-width="0.7" opacity="0.5"/>
+            <!-- Left arm — reaching to laptop -->
+            <path d="M92 132 Q76 140 70 162" stroke="#1e1640" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="M92 132 Q76 140 70 162" stroke="#2a2050" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <!-- Left hand -->
+            <ellipse cx="70" cy="163" rx="6" ry="4" fill="#f5c5a0"/>
+            <!-- Right arm -->
+            <path d="M128 132 Q144 140 150 162" stroke="#1e1640" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="M128 132 Q144 140 150 162" stroke="#2a2050" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <!-- Right hand -->
+            <ellipse cx="150" cy="163" rx="6" ry="4" fill="#f5c5a0"/>
+
+            <!-- NECK -->
+            <rect x="105" y="115" width="10" height="16" rx="4" fill="#f5c5a0"/>
+
+            <!-- HEAD — anime proportions -->
+            <ellipse cx="110" cy="98" rx="22" ry="24" fill="#f5c5a0"/>
+
+            <!-- SHORT SPIKY ANIME HAIR (dark) -->
+            <!-- Base hair shape -->
+            <path d="M88 95 Q90 74 110 72 Q130 74 132 95 Q130 78 110 76 Q90 78 88 95Z" fill="#1a0c04"/>
+            <!-- Side hair -->
+            <path d="M88 95 Q84 88 86 80 Q88 92 90 96Z" fill="#1a0c04"/>
+            <path d="M132 95 Q136 88 134 80 Q132 92 130 96Z" fill="#1a0c04"/>
+            <!-- Spiky top hair pieces -->
+            <path d="M104 72 Q102 62 106 58 Q108 65 110 72Z" fill="#1a0c04"/>
+            <path d="M110 72 Q110 60 114 56 Q114 66 116 72Z" fill="#1a0c04"/>
+            <path d="M116 73 Q118 62 122 60 Q120 68 118 74Z" fill="#1a0c04"/>
+            <path d="M100 74 Q98 65 101 62 Q102 68 104 74Z" fill="#1a0c04"/>
+            <!-- Front hair tuft over forehead -->
+            <path d="M100 78 Q105 72 110 76 Q108 80 104 82Z" fill="#1a0c04" opacity="0.9"/>
+
+            <!-- ANIME EYES (large, expressive) -->
+            <!-- Eye whites -->
+            <ellipse cx="103" cy="97" rx="7" ry="7.5" fill="white"/>
+            <ellipse cx="117" cy="97" rx="7" ry="7.5" fill="white"/>
+            <!-- Iris — teal colored (looking at screen) -->
+            <ellipse cx="104" cy="98" rx="5" ry="5.5" fill="#0b8a6a"/>
+            <ellipse cx="118" cy="98" rx="5" ry="5.5" fill="#0b8a6a"/>
+            <!-- Pupil -->
+            <ellipse cx="104" cy="98.5" rx="3" ry="3.5" fill="#050e0b"/>
+            <ellipse cx="118" cy="98.5" rx="3" ry="3.5" fill="#050e0b"/>
+            <!-- Eye shine — classic anime highlight -->
+            <ellipse cx="105.5" cy="96" rx="1.8" ry="2" fill="white"/>
+            <ellipse cx="119.5" cy="96" rx="1.8" ry="2" fill="white"/>
+            <circle cx="103" cy="100" r="0.8" fill="white" opacity="0.6"/>
+            <circle cx="117" cy="100" r="0.8" fill="white" opacity="0.6"/>
+            <!-- Upper eyelash lines -->
+            <path d="M96 93.5 Q103 90 110 93.5" stroke="#1a0c04" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <path d="M110 93.5 Q117 90 124 93.5" stroke="#1a0c04" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <!-- Eyebrows — thick anime style -->
+            <path d="M96 89 Q103 85.5 110 88" stroke="#1a0c04" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M110 88 Q117 85.5 124 89" stroke="#1a0c04" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Nose — minimal anime dot -->
+            <ellipse cx="110" cy="106" rx="1.2" ry="0.8" fill="#d4906a" opacity="0.8"/>
+            <!-- Mouth — small anime smile -->
+            <path d="M105 111 Q110 114 115 111" stroke="#d4906a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- Blush marks (anime style) -->
+            <ellipse cx="98" cy="104" rx="4.5" ry="2.5" fill="#ff9999" opacity="0.3"/>
+            <ellipse cx="122" cy="104" rx="4.5" ry="2.5" fill="#ff9999" opacity="0.3"/>
+
+            <!-- HEADPHONES — over-ear anime style -->
+            <!-- Band over head -->
+            <path d="M88 95 Q89 74 110 72 Q131 74 132 95" stroke="#00e5a0" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <!-- Left ear cup -->
+            <ellipse cx="88" cy="97" rx="7" ry="8.5" fill="#14142a" stroke="#00e5a0" stroke-width="1.2"/>
+            <ellipse cx="88" cy="97" rx="4.5" ry="5.5" fill="#00e5a0" opacity="0.2"/>
+            <!-- Right ear cup -->
+            <ellipse cx="132" cy="97" rx="7" ry="8.5" fill="#14142a" stroke="#00e5a0" stroke-width="1.2"/>
+            <ellipse cx="132" cy="97" rx="4.5" ry="5.5" fill="#00e5a0" opacity="0.2"/>
+            <!-- Mic boom from right cup -->
+            <path d="M132 103 Q140 108 142 115" stroke="#00e5a0" stroke-width="1.3" fill="none"/>
+            <circle cx="143" cy="117" r="3" fill="#14142a" stroke="#00e5a0" stroke-width="1"/>
+            <!-- Mic active pulse -->
+            <circle cx="143" cy="117" r="3" fill="#00e5a0" opacity="0.35"><animate attributeName="r" values="3;6;3" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.35;0;0.35" dur="1.8s" repeatCount="indefinite"/></circle>
+            <!-- Headphone LED indicator on left cup -->
+            <circle cx="83" cy="97" r="2" fill="#00e5a0"><animate attributeName="opacity" values="1;0.2;1" dur="2.2s" repeatCount="indefinite"/></circle>
+
+            <!-- CHAIR SEAT -->
+            <rect x="78" y="157" width="64" height="12" rx="5" fill="#111128" stroke="#7c6dfa" stroke-width="0.9"/>
+            <!-- Chair base + wheels (simplified) -->
+            <line x1="110" y1="168" x2="110" y2="180" stroke="#20203a" stroke-width="4"/>
+            <ellipse cx="110" cy="182" rx="22" ry="4" fill="#14142a" stroke="#7c6dfa" stroke-width="0.7" opacity="0.7"/>
+            <circle cx="91" cy="184" r="3" fill="#1a1a30" stroke="#7c6dfa" stroke-width="0.6"/>
+            <circle cx="110" cy="185" r="3" fill="#1a1a30" stroke="#7c6dfa" stroke-width="0.6"/>
+            <circle cx="129" cy="184" r="3" fill="#1a1a30" stroke="#7c6dfa" stroke-width="0.6"/>
+
+            <!-- FLOATING NOTIFICATION BUBBLES -->
+            <g><rect x="150" y="80" width="58" height="20" rx="10" fill="#071510" stroke="#00e5a0" stroke-width="0.8" opacity="0.9"><animate attributeName="y" values="80;74;80" dur="3.2s" repeatCount="indefinite"/></rect><text x="160" y="93" font-family="monospace" font-size="8.5" fill="#00e5a0" opacity="0.9"><animate attributeName="opacity" values="0.9;1;0.9" dur="3.2s" repeatCount="indefinite"/>+1 ticket</text></g>
+            <g><rect x="12" y="84" width="52" height="20" rx="10" fill="#100824" stroke="#7c6dfa" stroke-width="0.8" opacity="0.85"><animate attributeName="y" values="84;78;84" dur="3.9s" repeatCount="indefinite"/></rect><text x="24" y="97" font-family="monospace" font-size="8.5" fill="#7c6dfa" opacity="0.85"><animate attributeName="opacity" values="0.85;1;0.85" dur="3.9s" repeatCount="indefinite"/>SLA ✓</text></g>
+
+            <!-- SCREEN GLOW reflecting on face (subtle) -->
+            <ellipse cx="110" cy="115" rx="22" ry="10" fill="#00e5a0" opacity="0.025"/>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- SCROLLING TECH STRIP -->
+  <!-- TECH STRIP -->
   <div class="tstrip">
     <div class="tscroll">
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Laptop</div>
@@ -456,11 +498,11 @@
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Phone Support</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg>Database</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Security</div>
-      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Dev / Ops</div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>DevOps</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Live Chat</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>24/7 Support</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg>Network</div>
-      <!-- duplicate -->
+      <!-- dup -->
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Laptop</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="2" width="20" height="8" rx="1.5"/><rect x="2" y="14" width="20" height="8" rx="1.5"/></svg>Server</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>Mobile</div>
@@ -469,27 +511,27 @@
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Phone Support</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/></svg>Database</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Security</div>
-      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Dev / Ops</div>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>DevOps</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Live Chat</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>24/7 Support</div>
       <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 20h20M7 3v14M12 3v14"/></svg>Network</div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="wrap">
     <!-- EXPERIENCE -->
     <section id="experience">
-      <div class="sh reveal"><span class="sn">01</span><h2 class="st">Experience</h2><div class="sl"></div></div>
-      <div class="ei reveal"><div class="eco">Trust Apollo (Apollo Global Enterprises) &middot; Remote</div><div class="ero">Customer Service Agent</div><div class="ep">Oct 2025 &mdash; Present</div><ul class="eb"><li>Manage high-volume customer communications across email, live chat, SMS and Facebook for e-commerce product lines including drones, flashlights, gadgets, and digital memberships.</li><li>Handle order confirmations, shipment tracking, cancellations, and delivery disputes across USPS, Amazon, and GOFO for customers in the US, UK, AU, CA, and IE.</li><li>Apply structured escalation frameworks to resolve complaints and retain customers while adhering to company policy.</li><li>Produce internal escalation notes and customer-facing documentation to reduce repeat contacts.</li></ul></div>
-      <div class="ei reveal"><div class="eco">Strong Source Holdings &middot; Onsite</div><div class="ero">System Admin / IT Officer</div><div class="ep">Jul 2024 &mdash; May 2025</div><ul class="eb"><li>Deployed and maintained cloud infrastructure on Oracle Cloud Infrastructure (OCI) including VPS and VM provisioning.</li><li>Built and maintained on-premise Linux servers including NAS, POS software, accounting software, and custom solutions across multiple departments and restaurant locations.</li><li>Managed LAN/WAN network infrastructure and firewall configuration ensuring high availability across company HQ and all sites.</li><li>Led client onboarding and technical support for POS system implementations ensuring successful deployment and user adoption.</li></ul></div>
-      <div class="ei reveal"><div class="eco">Code2LAB &middot; Onsite</div><div class="ero">Technical Support Team Lead</div><div class="ep">Jun 2022 &mdash; Jul 2024</div><ul class="eb"><li>Led and mentored a technical support team managing workload distribution, onboarding, training, and performance reviews.</li><li>Acted as primary escalation point for complex software, server, and network issues &mdash; ensuring SLA compliance and timely resolution.</li><li>Monitored KPIs including ticket volume, resolution time, and CSAT scores; optimised team workflows for efficiency.</li><li>Collaborated with product and engineering teams to identify recurring issues and drive improvements to customer experience.</li><li>Built and maintained internal knowledge base and customer-facing documentation used across the organisation.</li></ul></div>
-      <div class="ei reveal"><div class="eco">Code2LAB &middot; Hybrid</div><div class="ero">Technical Support</div><div class="ep">Jul 2021 &mdash; Jun 2022</div><ul class="eb"><li>Provided first-line technical support for production systems, Linux/Windows server environments, and network infrastructure.</li><li>Assisted with LAN/WAN configuration, server provisioning, and hardware/software deployment and maintenance.</li></ul></div>
-      <div class="ei reveal"><div class="eco">Code2LAB &middot; Hybrid</div><div class="ero">Junior Customer Service</div><div class="ep">Jul 2020 &mdash; Jul 2021</div><ul class="eb"><li>Provided customer support and technical assistance for software products via email and phone channels.</li><li>Documented customer issues and coordinated with technical teams for timely and accurate resolution.</li></ul></div>
+      <div class="sh reveal"><span class="snum">01</span><h2 class="stit">Experience</h2><div class="sline"></div></div>
+      <div class="ei reveal"><div class="eco">Trust Apollo · Remote</div><div class="ero">Customer Service Agent</div><div class="ep">Oct 2025 — Present</div><ul class="eb"><li>Manage high-volume customer communications across email, live chat, SMS and Facebook for e-commerce product lines including drones, flashlights, gadgets, and digital memberships.</li><li>Handle order confirmations, shipment tracking, cancellations, and delivery disputes across USPS, Amazon, and GOFO for customers in the US, UK, AU, CA, and IE.</li><li>Apply structured escalation frameworks to resolve complaints and retain customers while adhering to company policy.</li><li>Produce internal escalation notes and customer-facing documentation to reduce repeat contacts.</li></ul></div>
+      <div class="ei reveal"><div class="eco">Strong Source Holdings · Onsite</div><div class="ero">System Admin / IT Officer</div><div class="ep">Jul 2024 — May 2025</div><ul class="eb"><li>Deployed and maintained cloud infrastructure on Oracle Cloud Infrastructure (OCI) including VPS and VM provisioning.</li><li>Built and maintained on-premise Linux servers including NAS, POS software, accounting software, and custom solutions across multiple departments and restaurant locations.</li><li>Managed LAN/WAN network infrastructure and firewall configuration ensuring high availability across company HQ and all sites.</li><li>Led client onboarding and technical support for POS system implementations ensuring successful deployment and user adoption.</li></ul></div>
+      <div class="ei reveal"><div class="eco">Code2LAB · Onsite</div><div class="ero">Technical Support Team Lead</div><div class="ep">Jun 2022 — Jul 2024</div><ul class="eb"><li>Led and mentored a technical support team managing workload distribution, onboarding, training, and performance reviews.</li><li>Acted as primary escalation point for complex software, server, and network issues — ensuring SLA compliance and timely resolution.</li><li>Monitored KPIs including ticket volume, resolution time, and CSAT scores; optimised team workflows for efficiency.</li><li>Collaborated with product and engineering teams to identify recurring issues and drive improvements to customer experience.</li><li>Built and maintained internal knowledge base and customer-facing documentation used across the organisation.</li></ul></div>
+      <div class="ei reveal"><div class="eco">Code2LAB · Hybrid</div><div class="ero">Technical Support</div><div class="ep">Jul 2021 — Jun 2022</div><ul class="eb"><li>Provided first-line technical support for production systems, Linux/Windows server environments, and network infrastructure.</li><li>Assisted with LAN/WAN configuration, server provisioning, and hardware/software deployment and maintenance.</li></ul></div>
+      <div class="ei reveal"><div class="eco">Code2LAB · Hybrid</div><div class="ero">Junior Customer Service</div><div class="ep">Jul 2020 — Jul 2021</div><ul class="eb"><li>Provided customer support and technical assistance for software products via email and phone channels.</li><li>Documented customer issues and coordinated with technical teams for timely and accurate resolution.</li></ul></div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills">
-      <div class="sh reveal"><span class="sn">02</span><h2 class="st">Technical Skills</h2><div class="sl"></div></div>
+      <div class="sh reveal"><span class="snum">02</span><h2 class="stit">Technical Skills</h2><div class="sline"></div></div>
       <div class="sg">
         <div class="sb reveal"><div class="sbt">Support Platforms</div><div class="tags"><span class="tag">Zendesk</span><span class="tag">Freshdesk</span><span class="tag">WHMCS</span><span class="tag">Jira</span><span class="tag">CRM Tools</span><span class="tag">Ticketing</span></div></div>
         <div class="sb reveal"><div class="sbt">Cloud &amp; Infrastructure</div><div class="tags"><span class="tag">AWS</span><span class="tag">Oracle OCI</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">OpenShift</span><span class="tag">EC2/S3/IAM</span></div></div>
@@ -500,47 +542,40 @@
 
     <!-- CERTIFICATIONS -->
     <section id="certifications">
-      <div class="sh reveal"><span class="sn">03</span><h2 class="st">Certifications</h2><div class="sl"></div></div>
+      <div class="sh reveal"><span class="snum">03</span><h2 class="stit">Certifications</h2><div class="sline"></div></div>
       <div class="cl">
-        <div class="ci reveal"><div class="cic" style="background:rgba(255,153,0,0.12)">&#9729;&#65039;</div><div><div class="cn">AWS Cloud Solutions Architect</div><div class="cis">Amazon Web Services &middot; Professional Certificate</div></div></div>
-        <div class="ci reveal"><div class="cic" style="background:rgba(5,74,218,0.12)">&#9881;&#65039;</div><div><div class="cn">IBM Applied DevOps</div><div class="cis">IBM &middot; Professional Certificate</div></div></div>
-        <div class="ci reveal"><div class="cic" style="background:rgba(66,133,244,0.12)">&#128295;</div><div><div class="cn">Google IT Support</div><div class="cis">Google &middot; Professional Certificate</div></div></div>
+        <div class="ci reveal"><div class="cic" style="background:rgba(255,153,0,.12)">☁️</div><div><div class="cn">AWS Cloud Solutions Architect</div><div class="cis">Amazon Web Services · Professional Certificate</div></div></div>
+        <div class="ci reveal"><div class="cic" style="background:rgba(5,74,218,.12)">⚙️</div><div><div class="cn">IBM Applied DevOps</div><div class="cis">IBM · Professional Certificate</div></div></div>
+        <div class="ci reveal"><div class="cic" style="background:rgba(66,133,244,.12)">🔧</div><div><div class="cn">Google IT Support</div><div class="cis">Google · Professional Certificate</div></div></div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="sh reveal"><span class="sn">04</span><h2 class="st">Get in Touch</h2><div class="sl"></div></div>
+      <div class="sh reveal"><span class="snum">04</span><h2 class="stit">Get in Touch</h2><div class="sline"></div></div>
       <div class="cg">
-        <a class="cc reveal" href="mailto:aungkomyat.lucas@gmail.com"><div class="clbl">Email</div><div class="cv">aungkomyat.lucas@gmail.com</div><span class="ca">&#8599;</span></a>
-        <a class="cc reveal" href="tel:+66618624452"><div class="clbl">Phone</div><div class="cv">+66 618 624 452</div><span class="ca">&#8599;</span></a>
-        <a class="cc reveal" href="https://linkedin.com/in/aung-ko-myat-835405144" target="_blank" rel="noopener"><div class="clbl">LinkedIn</div><div class="cv">aung-ko-myat-835405144</div><span class="ca">&#8599;</span></a>
-        <div class="cc reveal"><div class="clbl">Location</div><div class="cv">Chiang Mai, Thailand</div><span class="ca" style="color:var(--muted)">&#127481;&#127469;</span></div>
+        <a class="cc reveal" href="mailto:aungkomyat.lucas@gmail.com"><div class="clbl">Email</div><div class="cv">aungkomyat.lucas@gmail.com</div><span class="ca">↗</span></a>
+        <a class="cc reveal" href="tel:+66618624452"><div class="clbl">Phone</div><div class="cv">+66 618 624 452</div><span class="ca">↗</span></a>
+        <a class="cc reveal" href="https://linkedin.com/in/aung-ko-myat-835405144" target="_blank" rel="noopener"><div class="clbl">LinkedIn</div><div class="cv">aung-ko-myat-835405144</div><span class="ca">↗</span></a>
+        <a class="cc reveal" href="Aung_Ko_Myat_Resume.pdf" download="Aung_Ko_Myat_Resume.pdf"><div class="clbl">Resume</div><div class="cv">Aung_Ko_Myat_Resume.pdf</div><span class="ca" style="color:var(--accent2)">⬇</span></a>
       </div>
     </section>
   </div>
 
   <footer>
-    <div class="container">
+    <div class="wrap">
       <div class="fn">Aung Ko Myat (Lucas)</div>
-      <div class="fs">Customer &amp; Technical Support Specialist &middot; <span>Chiang Mai, TH</span></div>
+      <div class="fs">Customer &amp; Technical Support Specialist · <span>Chiang Mai, TH</span></div>
     </div>
   </footer>
 </div>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e,i) => { if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);obs.unobserve(e.target);} });
-  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-  reveals.forEach(el=>obs.observe(el));
+  const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*55);obs.unobserve(en.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   const secs=document.querySelectorAll('section[id]');
-  const nls=document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll',()=>{
-    let c='';
-    secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.getAttribute('id');});
-    nls.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--text)':'';});
-  });
+  const nls=document.querySelectorAll('.nls a');
+  window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id;});nls.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--text)':'';});});
 </script>
 </body>
 </html>
