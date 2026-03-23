@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aung Ko Myat — Customer & Technical Support Specialist</title>
+  <meta name="description" content="Portfolio of Aung Ko Myat — Customer Support and Technical Support Specialist with 5+ years of experience across B2B SaaS, e-commerce, and IT environments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface2: #1a1a26;
+      --accent: #00e5a0;
+      --accent2: #7c6dfa;
+      --text: #f0ede8;
+      --muted: #8a8898;
+      --border: rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* NOISE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* GLOW ORBS */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb1 { width: 500px; height: 500px; background: rgba(0,229,160,0.06); top: -150px; right: -150px; }
+    .orb2 { width: 600px; height: 600px; background: rgba(124,109,250,0.05); bottom: -200px; left: -200px; }
+    .orb3 { width: 300px; height: 300px; background: rgba(0,229,160,0.03); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    /* LAYOUT */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 28px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero { padding: 96px 0 72px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .badge-dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 8vw, 80px);
+      font-weight: 800;
+      line-height: 1.03;
+      letter-spacing: -0.025em;
+    }
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .line span {
+      display: block;
+      animation: slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .hero h1 .line:nth-child(2) span { animation-delay: 0.08s; }
+    .hero h1 .line:nth-child(3) span { animation-delay: 0.16s; }
+    .accent-word { color: var(--accent); }
+
+    @keyframes slideUp {
+      from { transform: translateY(110%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .hero-sub {
+      margin-top: 28px;
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.75;
+      font-family: 'DM Mono', monospace;
+      font-weight: 300;
+      animation: fadeUp 1s 0.4s both;
+    }
+
+    .hero-cta {
+      margin-top: 40px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp 1s 0.55s both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0a0f;
+      padding: 13px 28px;
+      border-radius: 4px;
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #00ffb3; transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      padding: 13px 28px;
+      border-radius: 4px;
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.28); transform: translateY(-2px); }
+
+    .hero-stats {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      animation: fadeUp 1s 0.7s both;
+    }
+    .stat {
+      background: var(--surface);
+      padding: 22px 28px;
+      transition: background 0.2s;
+    }
+    .stat:hover { background: var(--surface2); }
+    .stat-num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 44px;
+    }
+    .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+    }
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* EXPERIENCE */
+    .exp-timeline { position: relative; }
+
+    .exp-item {
+      position: relative;
+      padding-left: 28px;
+      padding-bottom: 40px;
+    }
+    .exp-item:last-child { padding-bottom: 0; }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,229,160,0.4);
+    }
+    .exp-item::after {
+      content: '';
+      position: absolute;
+      left: 3.5px;
+      top: 22px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--border), transparent);
+    }
+    .exp-item:last-child::after { display: none; }
+
+    .exp-header { margin-bottom: 10px; }
+    .exp-company {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .exp-role {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .exp-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      margin-top: 14px;
+    }
+    .exp-bullets li {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 7px;
+    }
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: rgba(255,255,255,0.12);
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .skill-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      transition: border-color 0.25s, transform 0.2s, background 0.2s;
+    }
+    .skill-block:hover {
+      border-color: rgba(0,229,160,0.22);
+      transform: translateY(-3px);
+      background: var(--surface2);
+    }
+
+    .skill-block-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      background: var(--surface2);
+      color: var(--muted);
+      padding: 5px 11px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      transition: all 0.18s;
+      letter-spacing: 0.03em;
+    }
+    .tag:hover { color: var(--text); border-color: rgba(255,255,255,0.16); }
+
+    /* CERTIFICATIONS */
+    .cert-list { display: flex; flex-direction: column; gap: 10px; }
+    .cert-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .cert-item:hover {
+      border-color: rgba(0,229,160,0.2);
+      background: var(--surface2);
+      transform: translateX(4px);
+    }
+    .cert-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .cert-name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+    .cert-issuer {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s;
+      display: block;
+    }
+    .contact-card:hover {
+      border-color: rgba(0,229,160,0.3);
+      transform: translateY(-3px);
+      background: var(--surface2);
+    }
+    .contact-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .contact-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+    .contact-arrow {
+      color: var(--accent);
+      font-size: 16px;
+      margin-top: 10px;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .contact-card:hover .contact-arrow { transform: translate(3px,-3px); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      text-align: center;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .footer-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .footer-sub span { color: var(--accent); }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 64px 0 48px; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .stat { padding: 16px 14px; }
+      .stat-num { font-size: 24px; }
+    }
+
+    /* SELECTION */
+    ::selection { background: rgba(0,229,160,0.2); color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">AKM_PORTFOLIO</a>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="container">
+    <div class="hero">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for remote work
+      </div>
+      <h1>
+        <span class="line"><span>Customer &amp;</span></span>
+        <span class="line"><span>Technical <span class="accent-word">Support</span></span></span>
+        <span class="line"><span>Specialist.</span></span>
+      </h1>
+      <p class="hero-sub">
+        5+ years building resilient support systems, leading teams,
+        and managing cloud infrastructure across US, UK, AU &amp; EU time zones.
+      </p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="mailto:aungkomyat.lucas@gmail.com">Get in touch</a>
+        <a class="btn-outline" href="https://linkedin.com/in/aung-ko-myat-835405144" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Global regions</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-header reveal">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="exp-timeline">
+
+        <div class="exp-item reveal">
+          <div class="exp-header">
+            <div class="exp-company">Trust Apollo (Apollo Global Enterprises) · Remote</div>
+            <div class="exp-role">Customer Service Agent</div>
+            <div class="exp-period">Oct 2025 — Present</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Manage high-volume customer communications across email, live chat, SMS and Facebook for e-commerce product lines including drones, flashlights, gadgets, and digital memberships.</li>
+            <li>Handle order confirmations, shipment tracking, cancellations, and delivery disputes across USPS, Amazon, and GOFO for customers in the US, UK, AU, CA, and IE.</li>
+            <li>Apply structured escalation frameworks to resolve complaints and retain customers while adhering to company policy.</li>
+            <li>Produce internal escalation notes and customer-facing documentation to reduce repeat contacts.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-header">
+            <div class="exp-company">Strong Source Holdings · Onsite</div>
+            <div class="exp-role">System Admin / IT Officer</div>
+            <div class="exp-period">Jul 2024 — May 2025</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Deployed and maintained cloud infrastructure on Oracle Cloud Infrastructure (OCI) including VPS and VM provisioning.</li>
+            <li>Built and maintained on-premise Linux servers including NAS, POS software, accounting software, and custom solutions across multiple departments and restaurant locations.</li>
+            <li>Managed LAN/WAN network infrastructure and firewall configuration ensuring high availability across company HQ and all sites.</li>
+            <li>Led client onboarding and technical support for POS system implementations ensuring successful deployment and user adoption.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-header">
+            <div class="exp-company">Code2LAB · Onsite</div>
+            <div class="exp-role">Technical Support Team Lead</div>
+            <div class="exp-period">Jun 2022 — Jul 2024</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Led and mentored a technical support team managing workload distribution, onboarding, training, and performance reviews.</li>
+            <li>Acted as primary escalation point for complex software, server, and network issues — ensuring SLA compliance and timely resolution.</li>
+            <li>Monitored KPIs including ticket volume, resolution time, and CSAT scores; optimised team workflows for efficiency.</li>
+            <li>Collaborated with product and engineering teams to identify recurring issues and drive improvements to customer experience.</li>
+            <li>Built and maintained internal knowledge base and customer-facing documentation used across the organisation.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-header">
+            <div class="exp-company">Code2LAB · Hybrid</div>
+            <div class="exp-role">Technical Support</div>
+            <div class="exp-period">Jul 2021 — Jun 2022</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Provided first-line technical support for production systems, Linux/Windows server environments, and network infrastructure.</li>
+            <li>Assisted with LAN/WAN configuration, server provisioning, and hardware/software deployment and maintenance.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-header">
+            <div class="exp-company">Code2LAB · Hybrid</div>
+            <div class="exp-role">Junior Customer Service</div>
+            <div class="exp-period">Jul 2020 — Jul 2021</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Provided customer support and technical assistance for software products via email and phone channels.</li>
+            <li>Documented customer issues and coordinated with technical teams for timely and accurate resolution.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-header reveal">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-block reveal">
+          <div class="skill-block-title">Support Platforms</div>
+          <div class="skill-tags">
+            <span class="tag">Zendesk</span>
+            <span class="tag">Freshdesk</span>
+            <span class="tag">WHMCS</span>
+            <span class="tag">Jira</span>
+            <span class="tag">CRM Tools</span>
+            <span class="tag">Ticketing Systems</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-block-title">Cloud & Infrastructure</div>
+          <div class="skill-tags">
+            <span class="tag">AWS</span>
+            <span class="tag">Oracle OCI</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">OpenShift</span>
+            <span class="tag">EC2 / S3 / IAM</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-block-title">Systems & Networking</div>
+          <div class="skill-tags">
+            <span class="tag">Linux Admin</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">NGINX</span>
+            <span class="tag">LAN / WAN</span>
+            <span class="tag">Firewall Config</span>
+            <span class="tag">NAS Management</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-block-title">DevOps & Databases</div>
+          <div class="skill-tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Bash Scripting</span>
+            <span class="tag">Git</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="section-header reveal">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Certifications</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-list">
+        <div class="cert-item reveal">
+          <div class="cert-icon" style="background: rgba(255,153,0,0.12);">☁️</div>
+          <div>
+            <div class="cert-name">AWS Cloud Solutions Architect</div>
+            <div class="cert-issuer">Amazon Web Services · Professional Certificate</div>
+          </div>
+        </div>
+        <div class="cert-item reveal">
+          <div class="cert-icon" style="background: rgba(5,74,218,0.12);">⚙️</div>
+          <div>
+            <div class="cert-name">IBM Applied DevOps</div>
+            <div class="cert-issuer">IBM · Professional Certificate</div>
+          </div>
+        </div>
+        <div class="cert-item reveal">
+          <div class="cert-icon" style="background: rgba(66,133,244,0.12);">🔧</div>
+          <div>
+            <div class="cert-name">Google IT Support</div>
+            <div class="cert-issuer">Google · Professional Certificate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header reveal">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="mailto:aungkomyat.lucas@gmail.com">
+          <div class="contact-label">Email</div>
+          <div class="contact-val">aungkomyat.lucas@gmail.com</div>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-card reveal" href="tel:+66618624452">
+          <div class="contact-label">Phone</div>
+          <div class="contact-val">+66 618 624 452</div>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-card reveal" href="https://linkedin.com/in/aung-ko-myat-835405144" target="_blank" rel="noopener">
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-val">aung-ko-myat-835405144</div>
+          <span class="contact-arrow">↗</span>
+        </a>
+        <div class="contact-card reveal">
+          <div class="contact-label">Location</div>
+          <div class="contact-val">Chiang Mai, Thailand</div>
+          <span class="contact-arrow" style="color:var(--muted);">🇹🇭</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-name">Aung Ko Myat</div>
+      <div class="footer-sub">Customer &amp; Technical Support Specialist · <span>Chiang Mai, TH</span></div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Active nav link highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
